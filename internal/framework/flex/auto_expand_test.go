@@ -1361,6 +1361,14 @@ func TestExpandExpander(t *testing.T) {
 			WantErr: true,
 		},
 		{
+			TestName: "top level expands to nil",
+			Source: testFlexTFExpanderToNil{
+				Field1: types.StringValue("value1"),
+			},
+			Target:  &testFlexAWSExpander{},
+			WantErr: true,
+		},
+		{
 			TestName: "top level incompatible not-a-string Target",
 			Source: testFlexTFExpanderToString{
 				Field1: types.StringValue("value1"),
